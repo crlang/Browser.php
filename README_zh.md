@@ -2,32 +2,29 @@
 
 [![Build Status](https://travis-ci.org/crlang/Browser.php.png?branch=master)](https://travis-ci.org/crlang/Browser.php)
 
-Helps detect the user's browser and platform at the PHP level via the user agent
+根据 User Agent 内容来通过PHP去检测用户的浏览器和平台信息
 
+## 安装
 
-[中文简介](README_zh)
-
-## Installation
-
-You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
-
+可以下载到本地使用，或者通过 composer 安装依赖于所在的项目 [Composer](https://getcomposer.org/):
+```
     composer require crlang/browser.php
-
-If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
-
+```
+如果只需要在开发期间用到此库，例如要运行项目的测试套件，建议应该将其添加为Dev依赖：
+```
     composer require --dev crlang/browser.php
+```
 
-
-## Typical Usage:
+## 用法:
 
 ```php
 $browser = new Browser();
 echo $browser->getBrowser();
 ```
 
-## Browser Detection
+## 浏览器检测
 
-This solution identifies the following Browsers and does a best-guess on the version:
+该解决方案标识以下浏览器：
 
 * Opera (`Browser::BROWSER_OPERA`)
 * WebTV (`Browser::BROWSER_WEBTV`)
@@ -60,9 +57,9 @@ This solution identifies the following Browsers and does a best-guess on the ver
 * W3C.s Validator(`Browser::BROWSER_W3CVALIDATOR`)
 * BlackBerry(`Browser::BROWSER_BLACKBERRY`)
 
-## Operating System Detection
+## 操作系统检测
 
-This solution identifies the following Operating Systems:
+该解决方案标识以下操作系统：
 
 * Windows (`Browser::PLATFORM_WINDOWS`)
 * Windows CE (`Browser::PLATFORM_WINDOWS_CE`)
@@ -81,19 +78,19 @@ This solution identifies the following Operating Systems:
 * OpenSolaris (`Browser::PLATFORM_OPENSOLARIS`)
 * iPad (`Browser::PLATFORM_IPAD`)
 
-## Testing
+## 测试
 
-The testing with PHPUnit against known user agents available in tests/lists.  Each file is tab delimited with the following fields:
+使用 PHPUnit 对 tests/lists 中可用的已知用户代理进行测试。每个文件都是选项卡，其中包含以下字段：
 
-User Agent, User Agent Type, Browser, Version, Operating System, Operating System Version
+用户代理，用户代理类型，浏览器，版本，操作系统，操作系统版本
 
-eg
+例如
 ```
 Opera/9.80 (X11; Linux i686; Ubuntu/14.10) Presto/2.12.388 Version/12.16	Browser	Opera	12.16	Linux	Linux
 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.186 Safari/535.1   Browser	Chrome	14.0.835.186	Macintosh	OS X		10_7_2
 ```
 
-Tests can be run by phpunit:
+测试可以运行 phpunit:
 
 ```bash
 vendor/phpunit/phpunit/phpunit

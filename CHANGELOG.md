@@ -6,6 +6,17 @@ and this project **attempts** to adhere to [Semantic Versioning](https://semver.
 changes when it socially makes sense.
 
 ## [Unreleased]
+## [2.0.0] - 2021-3-30
+### Added
+- Added A new start
+
+## [1.9.6] - 2020-04-15
+### Added
+- Added support for Android Edge
+### Removed
+- tests for 7.2 as it was dropped by Travis CI/trusty
+### Changed
+- moved from /lib to /src for classes to get ready for 2.0 which will support PSR-4 loading
 
 ## [1.9.4] - 2019-07-09
 ### Added
